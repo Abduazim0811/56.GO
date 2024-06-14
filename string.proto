@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "genproto/pb";
+
+service StringService {
+    rpc ToUpper (StringRequest) returns (StringResponse) {}
+    
+    rpc ToLower (StringRequest) returns (StringResponse) {}
+    
+    rpc Reverse (StringRequest) returns (StringResponse) {}
+    
+    rpc Length (StringRequest) returns (LengthResponse) {}
+  }
+  
+  message StringRequest {
+    string input = 1;
+  }
+  
+  message StringResponse {
+    string output = 1;
+  }
+
+  message LengthResponse {
+    int32 length = 1;
+  }
